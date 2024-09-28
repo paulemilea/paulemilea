@@ -1,0 +1,27 @@
+name: Update README.md
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Vérifier le code
+        uses: actions/checkout@v2
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Installer les dépendances
+        run: npm install
+
+      - name: Exécuter le script de mise à jour
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+        run: node updateReadme.mjs

@@ -1,0 +1,12 @@
+{
+  "name": "paulemilea",
+  "version": "1.0.0",
+  "description": "😎",
+  "main": "updateReadme.mjs",
+  "scripts": {},
+  "author": "Paul",
+  "license": "ISC",
+  "devDependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
